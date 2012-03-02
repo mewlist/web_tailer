@@ -1,3 +1,19 @@
 = WebTailer
 
 This project rocks and uses MIT-LICENSE.
+
+= Install
+
+Add gem into Gemfile !
+
+ gem 'web_tailer', :git => 'git://github.com/mewlist/web_tailer.git'
+
+Add route to web_tailer into your config/routes.rb !
+
+ mount WebTailer::Engine => '/web_tailer'
+
+Add iframe into your view. and customize path param to what you want !
+
+ <iframe src='web_tailer?path=/var/log/httpd/access.log'></iframe>
+
+enjoy!
