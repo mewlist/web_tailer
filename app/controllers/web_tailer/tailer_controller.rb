@@ -4,7 +4,7 @@ module WebTailer
       respond_to do |format|
         format.html
         format.json do
-          path = Rails.root + (params[:path] || '../batch/log/activity.log')
+          path = Rails.root + params[:path]
           open(path) do |f|
             storage = session[:webtailer_seek_pos]
             storage ||= {}
