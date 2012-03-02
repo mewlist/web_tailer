@@ -40,10 +40,10 @@ class WebTailer
       @last_inner_height = log_el.innerHeight()
       el.animate({ scrollTop: @last_inner_height+"px" }, 'fast')
 
-  onComplete: (xhr) =>
+  onComplete: () =>
     @run()
 
-  onError: (xhr) =>
+  onError: () =>
     #
 
 $(document).ready () ->

@@ -1,5 +1,7 @@
 module WebTailer
   class TailerController < ApplicationController
+    layout 'web_tailer/application'
+
     def index
       respond_to do |format|
         format.html
@@ -13,7 +15,6 @@ module WebTailer
             tail_pos = f.pos
             pos      = storage[path.to_s].to_i
 
-            # 読み込みを一定量していなかったり、一度もしていない場合
             pos = tail_pos if tail_pos > pos + 64*1024*1024 || pos == 0
 
             f.seek pos
