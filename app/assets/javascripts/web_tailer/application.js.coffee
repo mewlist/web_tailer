@@ -17,7 +17,8 @@
 class WebTailer
   last_inner_height: 0
   run: () =>
-    setTimeout( @poll, 1000 )
+    interval = $.url().param('interval')
+    setTimeout( @poll, interval || 1000 )
 
   poll: () =>
     path = $.url().param('path')
